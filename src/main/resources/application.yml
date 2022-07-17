@@ -1,0 +1,52 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: 'email-service'
+  kafka:
+    consumer:
+      bootstrap-servers:
+      - "http://localhost:9092"
+      group-id: group-id
+      auto-offset-reset: earliest
+      key-deserializer:
+        org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer:
+        org.apache.kafka.common.serialization.ByteArrayDeserializer 
+  mail:
+    host: smtp.gmail.com
+    password: ${EMAIL_SERVICE_PASSWORD}
+    test-connection: true
+    username: programaaluguellegal@gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: false
+          starttls:
+            enable: true
+            required: true
+
+security: 
+  oauth2:
+    resource:
+      user-info-uri: "${PROTOCOLO}://${OAUTH_URL}:${OAUTH_PORT}/user"
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: "${PROTOCOLO}://${EUREKA_SERVER_URL}:${EUREKA_SERVER_PORT}/eureka"
+  instance:
+    prefer-ip-address: true
+    ip-address: ${IP_CONTAINER}
+    instance-id: "${IP_CONTAINER}:${server.port}"
+    
+app:
+  kafka:
+    novo-usuario-funcionario:
+      topic: usuario_novoUsuarioFuncionario
