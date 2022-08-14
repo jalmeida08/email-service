@@ -1,4 +1,4 @@
-package br.com.jsa.infra.kafka.consumer;
+package br.com.jsa.infra.kafka.consumer.usuario;
 
 import javax.mail.MessagingException;
 
@@ -15,7 +15,7 @@ public class UsuarioFuncionarioCosumer {
 	@Autowired
 	private MensageriaService mensageriaService;
 	
-	@KafkaListener(topics = "${app.kafka.novo-usuario-funcionario.topic}", groupId = "${spring.kafka.consumer.group-id}")
+	@KafkaListener(topics = "${app.kafka.consumer.usuario.novo-usuario-funcionario.topic}", groupId = "${spring.kafka.consumer.group-id}")
 	public void consumer(EmailDTO dto) throws MessagingException {
 		System.out.println("INICIO :: ENVIANDO EMAIL ");
 		mensageriaService.enviaEmail(dto);

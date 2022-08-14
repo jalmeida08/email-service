@@ -48,5 +48,23 @@ eureka:
     
 app:
   kafka:
-    novo-usuario-funcionario:
-      topic: usuario_novoUsuarioFuncionario
+    consumer:
+      usuario:
+        novo-usuario-funcionario:
+          topic: USUARIO_NOVO_USUARIO
+        erro-novo-usuario-funcionario:
+          topic: USUARIO_ERRO_NOVO_USUARIO
+          group-id: EmailService_NovoUsuarioErrorConsumer
+
+
+
+
+
+
+
+
+
+
+
+
+

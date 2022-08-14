@@ -1,5 +1,17 @@
-{"properties": [{
-  "name": "app.kafka.novo-usuario-funcionario.topic",
-  "type": "java.lang.String",
-  "description": "A description for 'app.kafka.novo-usuario-funcionario.topic'"
-}]}
+{"properties": [
+  {
+    "name": "app.kafka.consumer.usuario.novo-usuario-funcionario.topic",
+    "type": "java.lang.String",
+    "description": "A description for 'app.kafka.consumer.usuario.novo-usuario-funcionario.topic'"
+  },
+  {
+    "name": "app.kafka.consumer.usuario.erro-novo-usuario-funcionario.topic",
+    "type": "java.lang.String",
+    "description": "A description for 'app.kafka.consumer.usuario.erro-novo-usuario-funcionario.topic'"
+  },
+  {
+    "name": "app.kafka.consumer.usuario.erro-novo-usuario-funcionario.group-id",
+    "type": "java.lang.String",
+    "description": "A description for 'app.kafka.consumer.usuario.erro-novo-usuario-funcionario.group-id'"
+  }
+]}
